@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liveblocks Auth</title>
+  <script type="module" src="/room.js"></script>
+</head>
+<body>
+  <div>
+    <p id="status">Not connected</p>
+    <button id="connect">Connect to Room</button>
+  </div>
+
+  <script>
+    document.getElementById('connect').addEventListener('click', () => {
+      const { room, leave } = window.client.enterRoom("my-room");
+
+      room.subscribe("others", (others) => {
+        document.getElementById('status').innerText = `There are ${others.length} other user(s) online`;
+      });
+    });
+  </script>
+</body>
+</html>
