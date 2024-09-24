@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liveblocks Auth</title>
 </head>
+
 <body>
   <div>
     <p id="status">Not connected</p>
-    <button id="connect">Connect to Room</button>
+    <form onsubmit="return false;">
+      <input id="name" value="Max" required="" placeholder="Name">
+      <input id="room" value="asrez:devs:general" required="" placeholder="Room">
+      <button id="connect">Connect to Room</button>
+    </form>
   </div>
 
-  <!-- Import the room.js file -->
   <script type="module">
     import { client } from './room.js';
 
-    document.getElementById('connect').addEventListener('click', () => {
-      const { room, leave } = client.enterRoom("my-room");
+    const elm_button = document.getElementById('connect');
+    const elm_name = document.querySelector("#name");
+    const elm_room = document.querySelector("#room");
+
+    elm_button.addEventListener('click', () => {
+      localStorage.setItem("name", elm_name.value);
+
+      const { room, leave } = client.enterRoom(elm_room.value);
 
       room.subscribe("others", (others) => {
         document.getElementById('status').innerText = `There are ${others.length} other user(s) online`;
@@ -24,4 +35,5 @@
     });
   </script>
 </body>
+
 </html>

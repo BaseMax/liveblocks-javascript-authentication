@@ -13,10 +13,16 @@
   "license": "ISC",
   "dependencies": {
     "@liveblocks/client": "^2.7.2",
+    "@liveblocks/node": "^2.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
     "node-fetch": "^3.3.2",
+    "uuid": "^10.0.0",
     "ws": "^8.18.0"
   },
   "devDependencies": {
     "vite": "^5.4.7"
-  }
+  },
+  "keywords": []
 }
