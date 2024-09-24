@@ -3,7 +3,7 @@ import { createClient } from "@liveblocks/client";
 const client = createClient({
   authEndpoint: async (roomId) => {
     const name = localStorage.getItem("name");
-    
+
     console.log("authEndpoint: ", roomId, name);
 
     const response = await fetch("http://localhost:8080/api/liveblocks-auth?name=" + name, {

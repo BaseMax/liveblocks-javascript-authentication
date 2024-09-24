@@ -18,19 +18,19 @@
   </div>
 
   <script type="module">
-    import { client } from './room.js';
+    import { client } from "./room.js";
 
-    const elm_button = document.getElementById('connect');
+    const elm_button = document.querySelector("#connect");
     const elm_name = document.querySelector("#name");
     const elm_room = document.querySelector("#room");
 
-    elm_button.addEventListener('click', () => {
+    elm_button.addEventListener("click", () => {
       localStorage.setItem("name", elm_name.value);
 
       const { room, leave } = client.enterRoom(elm_room.value);
 
       room.subscribe("others", (others) => {
-        document.getElementById('status').innerText = `There are ${others.length} other user(s) online`;
+        document.getElementById("status").innerText = `There are ${others.length} other user(s) online`;
       });
     });
   </script>
