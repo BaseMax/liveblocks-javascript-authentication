@@ -71,7 +71,6 @@ Authenticates the user and authorizes access to a Liveblocks room.
 Request Body:
 
 ```
-Copy code
 {
   "roomId": "string"
 }
