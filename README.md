@@ -4,6 +4,8 @@ This repository provides a simple implementation of user authentication for Live
 
 ![Liveblocks JavaScript Authentication](https://github.com/user-attachments/assets/57221258-05c2-44b6-a07b-724c060b7197)
 
+https://liveblocks.io
+
 ## Features
 
 - Generate unique user IDs for session management.
