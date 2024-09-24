@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liveblocks Auth</title>
-  <script type="module" src="/room.js"></script>
 </head>
 <body>
   <div>
@@ -12,9 +11,12 @@
     <button id="connect">Connect to Room</button>
   </div>
 
-  <script>
+  <!-- Import the room.js file -->
+  <script type="module">
+    import { client } from './room.js';
+
     document.getElementById('connect').addEventListener('click', () => {
-      const { room, leave } = window.client.enterRoom("my-room");
+      const { room, leave } = client.enterRoom("my-room");
 
       room.subscribe("others", (others) => {
         document.getElementById('status').innerText = `There are ${others.length} other user(s) online`;
