@@ -22,7 +22,7 @@
     "ws": "^8.18.0"
   },
   "devDependencies": {
-    "vite": "^7.1.11"
+    "vite": "^7.3.2"
   },
   "keywords": []
 }
